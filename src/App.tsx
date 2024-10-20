@@ -1,65 +1,59 @@
-import './App.css'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover"
+  Sheet,
+  SheetClose,
+  SheetContent,
+  SheetDescription,
+  SheetFooter,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+import {useState} from "react";
+
 
 export default function App() {
+  const [container, setContainer] = useState(null);
+
   return (
-    <div>
-      <Popover>
-        <PopoverTrigger asChild>
-          <Button variant="outline">Open popover</Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-80">
-          <div className="grid gap-4">
-            <div className="space-y-2">
-              <h4 className="font-medium leading-none">Dimensions</h4>
-              <p className="text-sm text-muted-foreground">
-                Set the dimensions for the layer.
-              </p>
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-expect-error
+    <div id="extension-container" ref={setContainer}>
+      <Sheet modal={true}>
+        <SheetTrigger asChild className="show-panel">
+          <Button variant="outline">Open Support</Button>
+        </SheetTrigger>
+        <SheetContent className="dark sheet-content" container={container}>
+          <SheetHeader>
+            <SheetTitle>Edit profile</SheetTitle>
+            <SheetDescription>
+              Make changes to your profile here. Click save when you're done.
+            </SheetDescription>
+          </SheetHeader>
+          <div className="grid gap-4 py-4">
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="name" className="text-right">
+                Name
+              </Label>
+              <Input id="name" value="Pedro Duarte" className="col-span-3" />
             </div>
-            <div className="grid gap-2">
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="width">Width</Label>
-                <Input
-                  id="width"
-                  defaultValue="100%"
-                  className="col-span-2 h-8"
-                />
-              </div>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="maxWidth">Max. width</Label>
-                <Input
-                  id="maxWidth"
-                  defaultValue="300px"
-                  className="col-span-2 h-8"
-                />
-              </div>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="height">Height</Label>
-                <Input
-                  id="height"
-                  defaultValue="25px"
-                  className="col-span-2 h-8"
-                />
-              </div>
-              <div className="grid grid-cols-3 items-center gap-4">
-                <Label htmlFor="maxHeight">Max. height</Label>
-                <Input
-                  id="maxHeight"
-                  defaultValue="none"
-                  className="col-span-2 h-8"
-                />
-              </div>
+            <div className="grid grid-cols-4 items-center gap-4">
+              <Label htmlFor="username" className="text-right">
+                Username
+              </Label>
+              <Input id="username" value="@peduarte" className="col-span-3" />
             </div>
           </div>
-        </PopoverContent>
-      </Popover>
+          <SheetFooter>
+            <SheetClose asChild>
+              <Button type="submit">Save changes</Button>
+            </SheetClose>
+          </SheetFooter>
+        </SheetContent>
+      </Sheet>
     </div>
   )
 }

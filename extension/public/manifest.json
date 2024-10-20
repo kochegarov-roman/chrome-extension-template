@@ -2,9 +2,8 @@
   "manifest_version": 3,
   "name": "Support for code",
   "version": "1.0",
-  "description": "Support for writing program code: A Chrome extension built with Next.js",
+  "description": "A Chrome extension for support for writing program code",
   "action": {
-    "default_popup": "index.html",
     "default_icon": {
       "48": "icon48.png"
     }
@@ -16,10 +15,14 @@
   "optional_permissions": [
     "unlimitedStorage"
   ],
-  "web_accessible_resources": [
+  "background": {
+    "service_worker": "./background.js"
+  },
+  "content_scripts": [
     {
-      "resources": ["./public/dist/assets/*"],
-      "matches": ["<all_urls>"]
+      "matches": ["<all_urls>"],
+      "js": ["./content.js"],
+      "run_at": "document_end"
     }
   ],
   "icons": {

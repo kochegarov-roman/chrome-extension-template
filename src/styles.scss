@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#extension-container {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.sheet-content, .show-panel {
+  z-index: 2147483647;
+}
+
+.show-panel {
+  position: fixed;
+  top: 0;
+  right: 20vw;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background: #123;
+  height: 30px;
+  line-height: 10px;
+  border: 1px dashed;
+  border-top: 0;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+
+
+@layer base {
+  :root {
+    --tw_ext-background: 0 0% 100%;
+    --tw_ext-foreground: 240 10% 3.9%;
+    --tw_ext-card: 0 0% 100%;
+    --tw_ext-card-foreground: 240 10% 3.9%;
+    --tw_ext-popover: 0 0% 100%;
+    --tw_ext-popover-foreground: 240 10% 3.9%;
+    --tw_ext-primary: 240 5.9% 10%;
+    --tw_ext-primary-foreground: 0 0% 98%;
+    --tw_ext-secondary: 240 4.8% 95.9%;
+    --tw_ext-secondary-foreground: 240 5.9% 10%;
+    --tw_ext-muted: 240 4.8% 95.9%;
+    --tw_ext-muted-foreground: 240 3.8% 46.1%;
+    --tw_ext-accent: 240 4.8% 95.9%;
+    --tw_ext-accent-foreground: 240 5.9% 10%;
+    --tw_ext-destructive: 0 84.2% 60.2%;
+    --tw_ext-destructive-foreground: 0 0% 98%;
+    --tw_ext-border: 240 5.9% 90%;
+    --tw_ext-input: 240 5.9% 90%;
+    --tw_ext-ring: 240 10% 3.9%;
+    --tw_ext-chart-1: 12 76% 61%;
+    --tw_ext-chart-2: 173 58% 39%;
+    --tw_ext-chart-3: 197 37% 24%;
+    --tw_ext-chart-4: 43 74% 66%;
+    --tw_ext-chart-5: 27 87% 67%;
+    --tw_ext-radius: 0.5rem;
+  }
+  .dark {
+    --tw_ext-background: 240 10% 3.9%;
+    --tw_ext-foreground: 0 0% 98%;
+    --tw_ext-card: 240 10% 3.9%;
+    --tw_ext-card-foreground: 0 0% 98%;
+    --tw_ext-popover: 240 10% 3.9%;
+    --tw_ext-popover-foreground: 0 0% 98%;
+    --tw_ext-primary: 0 0% 98%;
+    --tw_ext-primary-foreground: 240 5.9% 10%;
+    --tw_ext-secondary: 240 3.7% 15.9%;
+    --tw_ext-secondary-foreground: 0 0% 98%;
+    --tw_ext-muted: 240 3.7% 15.9%;
+    --tw_ext-muted-foreground: 240 5% 64.9%;
+    --tw_ext-accent: 240 3.7% 15.9%;
+    --tw_ext-accent-foreground: 0 0% 98%;
+    --tw_ext-destructive: 0 62.8% 30.6%;
+    --tw_ext-destructive-foreground: 0 0% 98%;
+    --tw_ext-border: 240 3.7% 15.9%;
+    --tw_ext-input: 240 3.7% 15.9%;
+    --tw_ext-ring: 240 4.9% 83.9%;
+    --tw_ext-chart-1: 220 70% 50%;
+    --tw_ext-chart-2: 160 60% 45%;
+    --tw_ext-chart-3: 30 80% 55%;
+    --tw_ext-chart-4: 280 65% 60%;
+    --tw_ext-chart-5: 340 75% 55%;
+  }
+}
